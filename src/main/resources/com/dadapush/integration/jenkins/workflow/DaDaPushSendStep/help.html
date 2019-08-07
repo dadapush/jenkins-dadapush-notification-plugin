@@ -1,0 +1,10 @@
+<div>
+    Simple step for sending a notification to specified channel.<br>
+    Use the advanced settings to override the DaDaPush Plugin global configuration to include: <code>Base Path</code>, <code>Channel Token</code>.<br>
+    Please see the DaDaPush Plugin global configuration for more details on the fields.
+
+    Usage Example:<br>
+    <code>
+        dadapushSend title:"Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER}", content:"${env.BUILD_URL}"
+    </code>
+</div>

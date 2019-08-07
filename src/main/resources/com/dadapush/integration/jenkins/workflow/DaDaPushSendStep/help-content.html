@@ -1,0 +1,9 @@
+<div>
+  This is the message content, and can contain standard message markup.
+  The content will automatically truncate if it contains 500+ characters.
+  Message may include global variables, for example environment and currentBuild variables:<br>
+  <code>
+    dadapushSend title:"Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER}",
+    content:"${env.BUILD_URL}"
+  </code>
+</div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <f:entry field="title" title="Title">
+        <f:textbox/>
+    </f:entry>
+    <f:entry field="content" title="Content">
+        <f:textbox/>
+    </f:entry>
+    <f:advanced>
+        <f:entry field="basePath" title="Base Path">
+                <f:textbox />
+        </f:entry>
+        <f:entry field="channelToken" title="Channel Token">
+            <f:textbox />
+        </f:entry>
+        <f:entry field="failOnError">
+            <f:checkbox title="Fail On Error" default="false"/>
+        </f:entry>
+    </f:advanced>
+</j:jelly>

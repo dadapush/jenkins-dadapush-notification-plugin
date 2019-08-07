@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+<f:section title="Global DaDaPush Notifier Settings">
+    <f:entry title="Base Path" help="/plugin/dadapush/help-globalConfig-dadapushBasePath.html">
+        <f:textbox field="basePath" default="https://www.dadapush.com"/>
+    </f:entry>
+
+    <f:entry title="Channel Token" help="/plugin/dadapush/help-globalConfig-dadapushChannelToken.html">
+        <f:textbox field="channelToken" />
+    </f:entry>
+
+    <f:validateButton
+        title="${%Test Connection}" progress="${%Testing...}"
+        method="testConnection" with="basePath,channelToken"
+        checkMethod="post" />
+  </f:section>
+</j:jelly>

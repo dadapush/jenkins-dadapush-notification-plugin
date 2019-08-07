@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:entry title="Notify Build Start">
+        <f:checkbox field="startNotification" />
+    </f:entry>
+
+    <f:entry title="Notify Aborted">
+        <f:checkbox field="notifyAborted" />
+    </f:entry>
+
+    <f:entry title="Notify Failure">
+        <f:checkbox field="notifyFailure" />
+    </f:entry>
+
+    <f:entry title="Notify Not Built">
+        <f:checkbox field="notifyNotBuilt" />
+    </f:entry>
+
+    <f:entry title="Notify Success">
+        <f:checkbox field="notifySuccess" />
+    </f:entry>
+
+    <f:entry title="Notify Unstable">
+        <f:checkbox field="notifyUnstable" />
+    </f:entry>
+
+    <f:entry title="Notify Back To Normal">
+        <f:checkbox field="notifyBackToNormal" />
+    </f:entry>
+
+    <f:advanced>
+        <f:entry title="Notify Repeated Failure">
+            <f:checkbox field="notifyRepeatedFailure" />
+        </f:entry>
+
+        <f:optionalBlock name="includeCustomMessage" title="Include custom message" inline="true" checked="${instance.customMessage != null}">
+            <f:entry title="Custom Message" field="customMessage" help="/plugin/dadapush/help-projectConfig-dadapushCustomMessage.html">
+                <f:textarea />
+            </f:entry>
+        </f:optionalBlock>
+
+        <f:entry title="Base Path" help="/plugin/dadapush/help-projectConfig-dadapushBasePath.html">
+            <f:textbox field="basePath" />
+        </f:entry>
+
+        <f:entry title="Channel Token" help="/plugin/dadapush/help-projectConfig-dadapushChannelToken.html">
+            <f:textbox field="channelToken" />
+        </f:entry>
+
+        <f:validateButton
+                title="${%Test Connection}" progress="${%Testing...}"
+                method="testConnection" with="basePath,channelToken"/>
+    </f:advanced>
+</j:jelly>
