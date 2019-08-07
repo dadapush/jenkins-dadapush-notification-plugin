@@ -15,8 +15,8 @@ dadapushSend title:"test title", content:"test content", failOnError:true, chann
 
 # Jenkins Instructions
 
-1. Set up a DaDaPush server
-2. Configure an incoming webhook
+1. go to [DaDaPush](https://www.dadapush.com), sign in or register an account.
+2. create new channel, save your channel token.
 3. Install this plugin on your Jenkins server
 4. **Add it as a Post-build action** in your Jenkins job.
 
